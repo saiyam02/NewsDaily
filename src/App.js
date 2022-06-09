@@ -21,14 +21,14 @@ const App =()=> {
         />
         <NavBar handleSearch = {query => setQuery(query)} />
           <Routes>
-            <Route exact path='search' element={<News setProgress={setProgress} key={query} category="" query={query} />}/>
-            <Route exact path='/' element={<News setProgress={setProgress} key="general" category="top-headlines"  />}/>
-            <Route exact path='/Business'element={<News setProgress={setProgress} key="business" category='business'  />}/>
-            <Route exact path='/Entertainment'element={<News setProgress={setProgress} key="entertainment" category="entertainment"  />}/>
-            <Route exact path='/Health'element={<News setProgress={setProgress} key="health" category="health"  />}/>
-            <Route exact path='/Sports'element={<News setProgress={setProgress} key="sports" category="sports" />}/>
-            <Route exact path='/Technology'element={<News setProgress={setProgress} key="Technology" category="technology"  />}/>
-            <Route exact path='/Science'element={<News setProgress={setProgress} key="Science" category="science" />}/>
+            <Route exact path='/NewsDaily/search' element={<News setProgress={setProgress} key={query} category="" query={query} />}/>
+            <Route exact path='/NewsDaily/' element={<News setProgress={setProgress} key="general" category="top-headlines"  />}/>
+            <Route exact path='/NewsDaily/Business'element={<News setProgress={setProgress} key="business" category='business'  />}/>
+            <Route exact path='/NewsDaily/Entertainment'element={<News setProgress={setProgress} key="entertainment" category="entertainment"  />}/>
+            <Route exact path='/NewsDaily/Health'element={<News setProgress={setProgress} key="health" category="health"  />}/>
+            <Route exact path='/NewsDaily/Sports'element={<News setProgress={setProgress} key="sports" category="sports" />}/>
+            <Route exact path='/NewsDaily/Technology'element={<News setProgress={setProgress} key="Technology" category="technology"  />}/>
+            <Route exact path='/NewsDaily/Science'element={<News setProgress={setProgress} key="Science" category="science" />}/>
           </Routes>
         </Router>
         </>     
