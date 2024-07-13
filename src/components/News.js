@@ -19,7 +19,6 @@ export default function News (props){
         try{
         props.setProgress(10);
         setLoading(true);
-        console.log(props.query);
         let url = `https://gnews.io/api/v4/top-headlines?&topic=${props.category}&token=db9d9af62ba295f96ff0924d370b4037&lang=en&country=${props.country}&q=${props.query}`;
         let data = await fetch(url);
         if(!data.ok) {
@@ -41,7 +40,6 @@ export default function News (props){
     }
    useEffect (()=>{
         updateNews();
-        // eslint-disable-next-line
    }, [])
     return (
         <>
@@ -50,13 +48,13 @@ export default function News (props){
         :<h1>No News Found for that keyword </h1>   
         }
             {loading?<Spinner/>:<></>}
-            {articles[0]=== "No Data Found"?<div>{articles[0]}</div>:<div className="row">
+            <div className="row">
                 {articles.map((element)=>{
                     return <div className="col-md-4" key={element.url}>
                                 <NewsItem source={element.source.name} title={element.title} ImgUrl={!element.image?defaultNewsImg:element.image} description={element.description?element.description.substring(0,element.description.length-100):" "} descriptionBlur={element.description?element.description.substring(element.description.length-100,element.description.length):" "} NewsUrl={element.url} time={element.publishedAt} />
                             </div>   
                 })} 
-            </div>}
+            </div>
         </div>}
         
         <div className="container d-flex justify-content-evenly my-3">
